@@ -1,4 +1,4 @@
-let users = [
+const users = [
   {
     name: "Moore Hensley",
     email: "moorehensley@indexia.com",
@@ -65,12 +65,9 @@ let users = [
 ]
 
 
-
-const getUserWithEmail = (users, email) => {
-   
+const getTotalFriendCount = users => {
+return users.reduce((total, user) => { total },  [])   
 };
 
 
-
-
-console.table(getUserWithEmail(users, email));
+console.table('getTotalFriendCount', getTotalFriendCount(users));
