@@ -1,81 +1,59 @@
-const users = [
-  {
-    name: 'Moore Hensley',
-    email: 'moorehensley@indexia.com',
-    eyeColor: 'blue',
-    friends: ['Sharron Pace'],
-    isActive: false,
-    balance: 2811,
-    gender: 'male',
-  },
-  {
-    name: 'Sharlene Bush',
-    email: 'sharlenebush@tubesys.com',
-    eyeColor: 'blue',
-    friends: ['Briana Decker', 'Sharron Pace'],
-    isActive: true,
-    balance: 3821,
-    gender: 'female',
-  },
-  {
-    name: 'Ross Vazquez',
-    email: 'rossvazquez@xinware.com',
-    eyeColor: 'green',
-    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
-    isActive: false,
-    balance: 3793,
-    gender: 'male',
-  },
-  {
-    name: 'Elma Head',
-    email: 'elmahead@omatom.com',
-    eyeColor: 'green',
-    friends: ['Goldie Gentry', 'Aisha Tran'],
-    isActive: true,
-    balance: 2278,
-    gender: 'female',
-  },
-  {
-    name: 'Carey Barr',
-    email: 'careybarr@nurali.com',
-    eyeColor: 'blue',
-    friends: ['Jordan Sampson', 'Eddie Strong', 'Adrian Cross'],
-    isActive: true,
-    balance: 3951,
-    gender: 'male',
-  },
-  {
-    name: 'Blackburn Dotson',
-    email: 'blackburndotson@furnigeer.com',
-    eyeColor: 'brown',
-    friends: ['Jacklyn Lucas', 'Linda Chapman', 'Adrian Cross', 'Solomon Fokes'],
-    isActive: false,
-    balance: 1498,
-    gender: 'male',
-  },
-  {
-    name: 'Sheree Anthony',
-    email: 'shereeanthony@kog.com',
-    eyeColor: 'brown',
-    friends: ['Goldie Gentry', 'Briana Decker'],
-    isActive: true,
-    balance: 2764,
-    gender: 'female',
-  },
-];
 
-// Дополни функцию getTotalBalanceByGender(users, gender) так, 
-// чтобы она возвращала общий баланс пользователей(свойство balance),
-//   пол которых(свойство gender) совпадает со значением параметра gender.
+// hw 5-10
 
-// Change code below this line
-const getTotalBalanceByGender = (users, gender) => {
-  return users.filter(user => user.gender === gender).reduce((total, user) => total + user.balance, 0);
-};
+// class Storage {
+//   constructor(items) {
+//     this.items = items;
+
+//   }
+
+//   getItems() {
+//     return this.items;
+//   }
+
+//   addItem(newItem) {
+//     return this.items.push(newItem);
+//   }
+
+//   removeItem(itemToRemove) {
+//     let indexOfRemoving = this.items.indexOf(itemToRemove)
+
+//     return this.items.splice(indexOfRemoving, 1)
+//   }
+
+// }
+
+
+// // Change code above this line
+// const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+// storage.addItem("Droid");
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// storage.removeItem("Prolonger");
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
+
+class StringBuilder {
+  constructor(initialValue) {
+    this.value = initialValue;
+  }
+
+  getValue() {
+    return this.value;
+  }
+
+  padEnd(str) {
+    return this.value.concat('', str);
+  }
+}
+
+
 // Change code above this line
-
-console.table('getTotalBalanceByGender', getTotalBalanceByGender(users, "male"));
-
-// console.log('sortedByReversedAuthorName', sortedByReversedAuthorName);
-// console.log('sortedByAscendingRating', sortedByAscendingRating);
-// console.log('sortedByDescentingRating', sortedByDescentingRating);
+const builder = new StringBuilder(".");
+console.log(builder.getValue()); // "."
+builder.padStart("^");
+console.log(builder.getValue()); // "^."
+builder.padEnd("^");
+console.log(builder.getValue()); // "^.^"
+builder.padBoth("=");
+console.log(builder.getValue()); // "=^.^="
